@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>RepairTech | Reparación y Mantenimiento</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    
+    <header class="header">
+        <div class="logo">Repair<span>Tech</span></div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#productos">Insumos</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <button class="btn-secondary" onclick="abrirModal('registroModal')">Registrarse</button>
+            <button class="btn-primary" onclick="abrirModal('loginModal')">Iniciar Sesión</button>
+        </div>
+        <div class="menu-toggle">&#9776;</div>
+    </header>
+
+   
+    <section id="inicio" class="hero">
+        <div class="hero-content" data-aos="fade-up">
+            <h1>Expertos en Reparación y Mantenimiento</h1>
+            <p>Lavadoras y neveras con servicio técnico profesional</p>
+            <a href="#contacto" class="btn-primary">Solicitar Servicio</a>
+        </div>
+    </section>
+
+    
+    <section id="servicios" class="servicios">
+        <h2 data-aos="fade-right">Nuestros Servicios</h2>
+
+        <div class="cards">
+
+            <div class="card" data-aos="zoom-in">
+                <div class="icon">🧺</div>
+                <h3>Reparación de Lavadoras</h3>
+                <p>Diagnóstico y reparación profesional.</p>
+            </div>
+
+            <div class="card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="icon">❄️</div>
+                <h3>Reparación de Neveras</h3>
+                <p>Mantenimiento y cambio de repuestos.</p>
+            </div>
+
+            <div class="card" data-aos="zoom-in" data-aos-delay="400">
+                <div class="icon">🔧</div>
+                <h3>Mantenimiento Preventivo</h3>
+                <p>Alarga la vida útil de tus electrodomésticos.</p>
+            </div>
+
+        </div>
+    </section>
+
+    
+    <section id="productos" class="productos">
+        <h2 data-aos="fade-left">Venta de Insumos</h2>
+
+        <div class="product-grid">
+
+            <div class="product-card" data-aos="flip-left">
+                <img src="img/repuesto1.jpg" alt="Repuesto Lavadora">
+                <h3>Motor para Lavadora</h3>
+                <p>$120.000</p>
+                <button class="btn-secondary">Agregar al carrito</button>
+            </div>
+
+            <div class="product-card" data-aos="flip-left" data-aos-delay="200">
+                <img src="img/repuesto2.jpg" alt="Repuesto Nevera">
+                <h3>Termostato Nevera</h3>
+                <p>$45.000</p>
+                <button class="btn-secondary">Agregar al carrito</button>
+            </div>
+
+        </div>
+    </section>
+    <section id="nosotros" class="nosotros">
+        <div class="content" data-aos="fade-up">
+            <h2>Sobre RepairTech</h2>
+            <p>
+                Somos una empresa especializada en reparación,
+                mantenimiento y venta de insumos para lavadoras y neveras,
+                comprometidos con calidad y garantía.
+            </p>
+        </div>
+    </section>
+
+   
+    <section id="contacto" class="contacto">
+        <h2 data-aos="fade-down">Contáctanos</h2>
+
+        <form id="formContacto" data-aos="fade-up">
+            <input type="text" placeholder="Nombre completo" required>
+            <input type="email" placeholder="Correo electrónico" required>
+            <input type="tel" placeholder="Teléfono">
+            <textarea placeholder="Describe tu problema"></textarea>
+            <button type="submit" class="btn-primary">Enviar Solicitud</button>
+        </form>
+    </section>
+
+    
+    <footer class="footer">
+        <p>© 2026 RepairTech - Todos los derechos reservados</p>
+    </footer>
+    <div id="registroModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal('registroModal')">&times;</span>
+            <h2>Registro de Usuario</h2>
+            <form>
+                <input type="text" placeholder="Número de documento" required>
+                <input type="tel" placeholder="Teléfono" required>
+                <input type="email" placeholder="Correo electrónico" required>
+                <input type="text" placeholder="Dirección" required>
+                <input type="password" placeholder="Contraseña" required>
+                <button type="submit" class="btn-primary">Registrarse</button>
+            </form>
+        </div>
+    </div>
+
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="cerrarModal('loginModal')">&times;</span>
+        <h2>Iniciar Sesión</h2>
+        <form>
+            <input type="email" placeholder="Correo electrónico" required>
+            <input type="password" placeholder="Contraseña" required>
+            <button type="submit" class="btn-primary">Ingresar</button>
+        </form>
+    </div>
+</div>
+
+   
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        
+        window.addEventListener("load", function() {
+            document.getElementById("loader").style.display = "none";
+        });
+
+        
+        const toggle = document.querySelector(".menu-toggle");
+        const nav = document.querySelector(".nav ul");
+
+        toggle.addEventListener("click", () => {
+            nav.classList.toggle("active");
+        });
+        function abrirModal(id) {
+            document.getElementById(id).style.display = "flex";
+        }
+
+        function cerrarModal(id) {
+            document.getElementById(id).style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            const registro = document.getElementById("registroModal");
+            const login = document.getElementById("loginModal");
+
+            if (event.target == registro) {
+                registro.style.display = "none";
+            }
+
+            if (event.target == login) {
+                login.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
