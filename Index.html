@@ -35,6 +35,10 @@
         <div class="auth-buttons">
             <button class="btn-secondary" onclick="abrirModal('registroModal')">Registrarse</button>
             <button class="btn-primary" onclick="abrirModal('loginModal')">Iniciar Sesión</button>
+            <!-- Carrito de compras -->
+            <button id="cartButton" class="btn-secondary" onclick="abrirModal('cartModal')">
+                🛒 <span id="cartCount" class="cart-count">0</span>
+            </button>
         </div>
         <div class="menu-toggle">&#9776;</div>
     </header>
@@ -84,11 +88,103 @@
     <section id="nosotros" class="nosotros">
         <div class="content" data-aos="fade-up">
             <h2>Sobre RepairTech</h2>
-            <p>
-                Somos una empresa especializada en reparación,
-                mantenimiento y venta de insumos para lavadoras y neveras,
-                comprometidos con calidad y garantía.
-            </p>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">MISIÓN</button>
+                    <div class="accordion-content">
+                        <p>
+                            Brindar servicios especializados de reparación, mantenimiento y venta de repuestos para electrodomésticos, garantizando
+                            soluciones eficientes, confiables y oportunas a nuestros clientes. Nos apoyamos en tecnología y en un sistema integral
+                            de gestión que optimiza nuestros procesos, mejora la trazabilidad de los servicios y fortalece la experiencia del
+                            usuario, contribuyendo al bienestar de los hogares y empresas.
+                        </p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">VISIÓN</button>
+                    <div class="accordion-content">
+                        <p>
+                            Para el año 2030, REPAIRTECH será reconocida en Medellín y el Área Metropolitana como una empresa líder en servicios
+                            técnicos de electrodomésticos, destacándose por su innovación tecnológica, atención personalizada, transparencia en los
+                            procesos y excelencia operativa, consolidándose como referente en transformación digital dentro del sector.
+                        </p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">VALORES CORPORATIVOS</button>
+                    <div class="accordion-content">
+                        <p>
+                            Responsabilidad: Cumplimos con nuestros compromisos en tiempos y calidad.
+                            Transparencia: Brindamos información clara en diagnósticos, cotizaciones y facturación.
+                            Compromiso: Nos enfocamos en satisfacer las necesidades del cliente.
+                            Innovación: Incorporamos tecnología para optimizar nuestros procesos.
+                            Trabajo en equipo: Fomentamos la colaboración entre técnicos y área administrativa.
+                            Ética profesional: Actuamos con honestidad y respeto en cada servicio.
+                        </p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">OBJETIVO GENERAL ORGANIZACIONAL</button>
+                    <div class="accordion-content">
+                        <p>
+                            Consolidar un modelo de negocio eficiente y sostenible basado en la digitalización de los procesos de atención,
+                            diagnóstico, cotización, asignación técnica, facturación y venta de repuestos, garantizando calidad, seguridad y
+                            satisfacción del cliente.
+                        </p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">OBJETIVOS ESTRATÉGICOS</button>
+                    <div class="accordion-content">
+                        <p>
+                            Incrementar la satisfacción del cliente en un 20% mediante la implementación del sistema digital de gestión.
+                            Reducir en un 30% los tiempos de respuesta en programación y asignación de servicios.
+                            Disminuir la pérdida de información y errores administrativos en un 90% mediante la centralización digital.
+                            Aumentar las ventas de repuestos en un 15% mediante integración con el sistema de gestión.
+                            Lograr posicionamiento digital a través de visibilidad web y trazabilidad de servicios.
+                        </p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">PORTAFOLIO DE SERVICIOS</button>
+                    <div class="accordion-content">
+                        <p>
+                            Reparación de neveras.
+                            Reparación de lavadoras.
+                            Mantenimiento preventivo y correctivo.
+                            Venta de repuestos originales y genéricos.
+                            Diagnóstico técnico especializado.
+                            Servicio a domicilio.
+                            Cotización digital por ubicación.
+                        </p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">POLÍTICA DE CALIDAD</button>
+                    <div class="accordion-content">
+                        <p>
+                            En REPAIRTECH nos comprometemos a prestar servicios de reparación y mantenimiento de electrodomésticos bajo estándares
+                            de calidad, eficiencia y seguridad, apoyados en herramientas tecnológicas que garanticen trazabilidad, control de
+                            procesos y mejora continua. Buscamos superar las expectativas de nuestros clientes mediante atención personalizada,
+                            cumplimiento en los tiempos de entrega y transparencia en cada servicio realizado.
+                        </p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">PROPUESTA DE VALOR</button>
+                    <div class="accordion-content">
+                        <p>
+                            REPAIRTECH combina experiencia técnica con tecnología digital, ofreciendo:
+                            Cotización automática por comuna.
+                            Seguimiento del estado del servicio en línea.
+                            Asignación eficiente de técnicos.
+                            Facturación detallada y segura.
+                            Historial digital de servicios.
+                            Opciones de pago flexibles (en línea o contraentrega).
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -100,7 +196,7 @@
             <input type="text" placeholder="Nombre completo" id="nombre" required>
             <input type="email" placeholder="Correo electrónico" id="email" required>
             <input type="tel" placeholder="Teléfono" id="telefono">
-            <textarea placeholder="Describe tu problema" id="mensaje"></textarea>
+            <input type="text" placeholder="Describe tu problema" id="mensaje">
             <button type="submit" class="btn-primary">Enviar Solicitud</button>
         </form>
 
@@ -125,9 +221,10 @@
             <div class="footer-section">
                 <h4>Integrantes</h4>
                 <ul class="team-list">
-                    <li>Carlo</li>
-                    <li>Magno</li>
-                    <li>Cassidy</li>
+                    <li>Victor Manuel Florez</li>
+                    <li>Miguel David Montenegro</li>
+                    <li>Juan David Ortix</li>
+                    <li>Paula Andrea Rosero</li>
                 </ul>
             </div>
 
@@ -151,12 +248,21 @@
         <div class="modal-content">
             <span class="close" onclick="cerrarModal('registroModal')">&times;</span>
             <h2>Registro de Usuario</h2>
-            <form>
-                <input type="text" placeholder="Número de documento" required>
-                <input type="tel" placeholder="Teléfono" required>
-                <input type="email" placeholder="Correo electrónico" required>
-                <input type="text" placeholder="Dirección" required>
-                <input type="password" placeholder="Contraseña" required>
+            <form id="registerForm">
+                <label for="docType" class="sr-only">Tipo de documento</label>
+                <select id="regDocType" required>
+                    <option value="">Seleccione tipo de documento</option>
+                    <option value="cc">Cédula de ciudadanía</option>
+                    <option value="ti">Tarjeta de identidad</option>
+                    <option value="ce">Cédula de extranjería</option>
+                    <option value="pasaporte">Pasaporte</option>
+                </select>
+                <input id="regDocNumber" type="text" placeholder="Número de documento" required>
+                <input id="regFullName" type="text" placeholder="Nombre completo" required>
+                <input id="regPhone" type="tel" placeholder="Teléfono" required>
+                <input id="regEmail" type="email" placeholder="Correo electrónico" required>
+                <input id="regAddress" type="text" placeholder="Dirección" required>
+                <input id="regPassword" type="password" placeholder="Contraseña" required>
                 <button type="submit" class="btn-primary">Registrarse</button>
             </form>
         </div>
@@ -166,9 +272,9 @@
         <div class="modal-content">
             <span class="close" onclick="cerrarModal('loginModal')">&times;</span>
             <h2>Iniciar Sesión</h2>
-            <form>
-                <input type="email" placeholder="Correo electrónico" required>
-                <input type="password" placeholder="Contraseña" required>
+            <form id="loginForm">
+                <input id="loginEmail" type="email" placeholder="Correo electrónico" required>
+                <input id="loginPassword" type="password" placeholder="Contraseña" required>
                 <button type="submit" class="btn-primary">Ingresar</button>
             </form>
         </div>
@@ -180,6 +286,53 @@
             <h2>Mantenimiento Preventivo</h2>
             <p class="modal-description">Se realizará mantenimiento a los siguientes usuarios:</p>
             <ul id="listaUsuarios" class="usuarios-list"></ul>
+        </div>
+    </div>
+
+    <!-- Modal del carrito -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal('cartModal')">&times;</span>
+            <h2>Carrito de Compras</h2>
+            <ul id="cartItems" class="cart-items"></ul>
+
+            <div class="cart-controls">
+                <div class="cart-summary">
+                    <p id="cartSubtotal">Subtotal: $0</p>
+                    <p id="cartDiscount">Descuento: $0</p>
+                    <p id="cartShippingDisplay">Envío: $0</p>
+                    <p id="cartTotal" class="cart-total">Total: $0</p>
+                </div>
+
+                <div class="cart-options">
+                    <div class="cart-shipping">
+                        <label for="cartShipping">Método de envío:</label>
+                        <select id="cartShipping">
+                            <option value="0">Recoger en tienda - $0</option>
+                            <option value="10000">Estándar - $10.000</option>
+                            <option value="25000">Urgente - $25.000</option>
+                        </select>
+                    </div>
+
+                    <div class="cart-coupon">
+                        <label for="cartCoupon">Cupón:</label>
+                        <input type="text" id="cartCoupon" placeholder="Código cupón">
+                        <button id="applyCoupon" class="btn-secondary">Aplicar</button>
+                        <div id="couponMsg" class="coupon-msg"></div>
+                    </div>
+
+                    <div class="payment-methods">
+                        <p>Método de pago:</p>
+                        <label><input type="radio" name="cartPayment" value="card" checked> Tarjeta</label>
+                        <label><input type="radio" name="cartPayment" value="cash"> Contra entrega</label>
+                    </div>
+
+                    <div class="checkout-buttons">
+                        <button id="checkoutBtn" class="btn-primary">Finalizar compra</button>
+                        <button id="payNowBtn" class="btn-secondary">Pagar ahora</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

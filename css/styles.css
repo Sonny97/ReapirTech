@@ -429,6 +429,186 @@ form textarea:focus {
 }
 
 /* =========================
+   ACORDIÓN
+========================= */
+.accordion {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.accordion-item + .accordion-item {
+    margin-top: 10px;
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 12px 20px;
+    background: var(--primary-cyan);
+    color: var(--bg-white);
+    border: none;
+    text-align: left;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.accordion-header:hover {
+    background: var(--primary-cyan-80);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 20px;
+    background: var(--bg-white);
+    border-radius: 0 0 5px 5px;
+}
+
+.accordion-content.open {
+    padding: 10px 20px 20px;
+}
+
+.welcome-msg {
+    color: var(--bg-white);
+    font-weight: 600;
+}
+
+#logoutBtn {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 20px;
+    background: var(--accent-yellow);
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#logoutBtn:hover {
+    background: var(--primary-cyan);
+    color: var(--bg-white);
+}
+
+/* badge del carrito */
+.cart-count {
+    background: var(--accent-yellow);
+    color: var(--text-dark);
+    font-size: 0.8rem;
+    border-radius: 50%;
+    padding: 2px 6px;
+    margin-left: 4px;
+}
+
+/* estilos de modal general ya existen, reutilizaremos ".modal" y ".modal-content" */
+.cart-items {
+    list-style: none;
+    max-height: 300px;
+    overflow-y: auto;
+    text-align: left;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.cart-items li {
+    border-bottom: 1px solid var(--border-light);
+    padding: 8px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.qty-btn,
+.remove-btn {
+    background: var(--primary-cyan);
+    color: var(--bg-white);
+    border: none;
+    border-radius: 4px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.remove-btn {
+    background: var(--accent-yellow);
+    color: var(--text-dark);
+    width: auto;
+    padding: 0 6px;
+}
+
+/* controles y opciones dentro del modal del carrito */
+.cart-controls {
+    margin-top: 16px;
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.cart-summary p {
+    margin: 6px 0;
+}
+
+.cart-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.cart-shipping label,
+.cart-coupon label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.cart-coupon input {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid var(--border-light);
+    width: 60%;
+}
+
+.coupon-msg {
+    color: var(--primary-cyan);
+    font-size: 0.9rem;
+    margin-top: 6px;
+}
+
+.payment-methods p {
+    margin: 0 0 6px 0;
+    font-weight: 600;
+}
+
+.payment-methods label {
+    margin-right: 10px;
+}
+
+.checkout-buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.cart-total {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+
+/* =========================
    MODAL
 ========================= */
 .modal {
